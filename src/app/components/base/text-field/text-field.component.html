@@ -1,0 +1,15 @@
+<div class="rounded-md border border-gray-200 p-2 mt-2 w-full">
+    <div class="flex items-center justify-between">
+        <input
+                [placeholder]="label"
+                [type]="inputType"
+                [pattern]="pattern"
+                autocomplete="cc-number"
+                class="w-full outline-none border-none px-2 text-gray-600"
+
+        >
+        @if(icon) {
+            <img [src]="icon" alt="">
+        }
+    </div>
+</div>

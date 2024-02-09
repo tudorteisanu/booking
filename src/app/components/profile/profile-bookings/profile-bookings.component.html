@@ -1,0 +1,33 @@
+
+<section>
+    <div class="flex items-center justify-between w-full">
+        <h3 class="text-2xl text-dark-green">
+            Current Bookings
+        </h3>
+        <div class="max-w-[300px] w-full">
+            <app-search placeholder="Search restaurant and cuisines..." />
+        </div>
+    </div>
+
+    <div class="w-full">
+        @for (booking of currentBookings(); track booking.id) {
+            <app-booking-card [booking]="booking"/>
+        }
+    </div>
+
+    <div class="flex items-center justify-between w-full mt-4">
+        <h3 class="text-2xl text-dark-green">
+            Past Bookings
+        </h3>
+        <div class="max-w-[300px] w-full">
+            <app-search placeholder="Search restaurant and cuisines..." />
+        </div>
+    </div>
+
+    <div class="w-full">
+        @for (booking of pastBookings(); track booking.id) {
+            <app-booking-card [booking]="booking"/>
+        }
+    </div>
+
+</section>

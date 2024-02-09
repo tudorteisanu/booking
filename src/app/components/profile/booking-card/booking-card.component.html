@@ -1,0 +1,47 @@
+<div class="p-3 bg-white w-full rounded-md flex justify-between mt-4">
+    <div class="flex">
+        <div>
+            <img [src]="booking.image" alt="">
+        </div>
+        <ul class="ml-3">
+            <li class="flex items-center">
+                <img src="assets/icons/building.svg" alt="">
+                <span class="ml-1 text-xs text-dark-green">
+                {{booking.name}}
+            </span>
+            </li>
+            <li class="flex items-center mt-2">
+                <img src="assets/icons/location.svg" alt="">
+                <span class="ml-1 text-xs text-dark-green">
+                {{booking.location}}
+            </span>
+            </li>
+            <li class="flex items-center mt-2">
+                <img src="assets/icons/calendar.svg" alt="">
+                <span class="ml-1 text-xs text-dark-green">
+                {{booking.date}}
+            </span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="">
+        <div class="h-full flex flex-col justify-between items-end">
+            <div class="text-sm text-nowrap">
+            <span
+                    class="uppercase font-bold"
+                    [ngClass]="getStatusClass(booking.status)">
+                {{ booking.status}}
+            </span>
+                <span>
+                ID {{booking.id}}
+            </span>
+            </div>
+            <div>
+               <span class="text-sm text-blue-500">
+                 Check details
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

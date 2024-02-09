@@ -1,0 +1,29 @@
+<section class="bg-white p-5 flex gap-5 rounded-md">
+    <div >
+        <img class="rounded-md" src="assets/images/profile.png" alt="">
+    </div>
+    <div class="w-full">
+        <div class="flex items-center justify-between w-full">
+            <h4 class="text-3xl font-bold">
+                Prashant Kumar Singh
+            </h4>
+            <button>
+                <img class="" src="assets/icons/edit.svg" alt="">
+            </button>
+        </div>
+        <ul class="grid grid-cols-3 gap-5 mt-5 w-full">
+            @for (contact of contacts; track $index) {
+                <li class="flex items-center gap-2">
+                    @if (contact.icon) {
+                        <span>
+                            <img [src]="contact.icon" alt="">
+                        </span>
+                    }
+                    <span class="text-sm text-dark-green">
+                       {{contact.value}}
+                    </span>
+                </li>
+            }
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,15 @@
+<section>
+    <div class="flex items-center justify-between">
+        <h3 class="text-2xl text-dark-green">
+            Saved Restaurants
+        </h3>
+        <div class="max-w-[300px] w-full">
+            <app-search placeholder="Search restaurant and cuisines..." />
+        </div>
+    </div>
+    <div class="grid grid-cols-2 gap-3 pt-5">
+        @for (restaurant of restaurants(); track restaurant.id) {
+            <app-restaurant-card [restaurant]="restaurant"/>
+        }
+    </div>
+</section>

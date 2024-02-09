@@ -1,0 +1,33 @@
+<div class="bg-white rounded-md p-4">
+    <div class="flex w-full justify-between">
+        <div class="flex items-center gap-4">
+            <div><img [src]="review.image" alt=""></div>
+            <div>
+                <span>{{review.name}}</span>
+                <div class="flex">
+                    @for (item of filledStars; track item) {
+                        <img src="assets/icons/filled-star.svg" alt="">
+                    }
+                    @for (item of unfilledStars; track item) {
+                        <img src="assets/icons/star.svg" alt="">
+                    }
+                </div>
+            </div>
+        </div>
+        <div>
+            <button>
+                <img src="assets/icons/more.svg" alt="">
+            </button>
+        </div>
+    </div>
+    <p class="text-gray-500 mt-4 text-sm">
+        {{review.text}}
+    </p>
+    <ul class="flex gap-2 mt-4">
+        @for (item of review.gallery; track $index) {
+            <li>
+                <img [src]="item" alt="">
+            </li>
+        }
+    </ul>
+</div>

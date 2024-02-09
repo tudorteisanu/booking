@@ -1,0 +1,10 @@
+<ul class="bg-white p-4 rounded-md w-[250px]">
+    @for (item of links; track item.to) {
+        <li
+                [routerLink]="item.to"
+                routerLinkActive="bg-emerald-100 text-emerald-600"
+                class="px-2 py-5 text-center text-dark-green rounded-md cursor-pointer">
+            {{item.label}}
+        </li>
+    }
+</ul>
