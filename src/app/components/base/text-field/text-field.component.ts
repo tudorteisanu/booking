@@ -12,6 +12,5 @@ export class TextFieldComponent {
   @Input() label = '';
   @Input() inputType = 'text';
   @Input() icon = '';
-  @Input() pattern = '';
-
+  @Input() prependIcon = '';
 }

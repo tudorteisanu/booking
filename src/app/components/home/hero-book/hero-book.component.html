@@ -1,0 +1,25 @@
+<div class="bg-primary rounded-md p-10">
+    <div class="flex flex-col sm:flex-row items-stretch gap-2">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-2 bg-white p-2 rounded-md w-full">
+            <app-form-select
+                    icon="assets/icons/calendar.svg"
+                    label="Date"
+                    [items]="days"/>
+            <app-form-select
+                    icon="assets/icons/clock.svg"
+                    label="Time"
+                    [items]="hours"/>
+            <app-form-select
+                    icon="assets/icons/user.svg"
+                    label="People"
+                    [items]="people"/>
+        </div>
+        <div class="bg-white  p-2 min-h-full md:min-w-[300px] rounded-md">
+            <app-text-field
+                    label="Search hotels and restaurant here..."
+                    prependIcon="assets/icons/loupe.svg"
+            ></app-text-field>
+        </div>
+        <button class="text-nowrap p-3 bg-green-600 shadow rounded-md text-gray-50">Find table </button>
+    </div>
+</div>

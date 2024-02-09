@@ -38,7 +38,7 @@ export const profileRoutes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'bookings',
+        redirectTo: 'restaurants',
         pathMatch:'full'
       }
     ]

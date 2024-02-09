@@ -15,17 +15,16 @@
                     Credit/Debit card
                 </span>
             </div>
-            <form content>
+            <form content class="flex gap-2 flex-col">
                <app-text-field label="Enter your name..." />
                <app-text-field
                        label="Enter card number"
                        icon="assets/icons/eye.svg"
-                       pattern="[0-9\s]{13,19}"
                        inputType="tel"
                />
                 <div class="grid grid-cols-2 gap-2 w-full">
-                   <app-text-field label="CVV" inputType="password"/>
-                   <app-text-field label="Expiry Date Month" />
+                   <app-text-field label="CVV" inputType="tel"/>
+                   <app-text-field inputType="month" label="Expiry Date Month" />
                 </div>
                 <div class="flex w-full justify-end mt-4">
                     <button
@@ -46,7 +45,10 @@
             </div>
             <form content >
                 <div class="grid grid-cols-2 gap-2">
-                    <app-text-field label="Google Pay UPI" icon="assets/icons/arrow-down.svg" />
+                    <app-form-select
+                        label="Select payment method"
+                        [items]="paymentMethods"
+                    />
                     <app-text-field label="Enter UPI ID"/>
                 </div>
                 <div class="flex w-full justify-end mt-4">

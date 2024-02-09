@@ -1,0 +1,74 @@
+@if (displayed()) {
+    <div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-opacity-50 bg-black"
+         (click)="closeDialog()">
+        <div
+                class=" bg-white p-8 shadow relative rounded-md"
+                (click)="$event.stopPropagation()"
+        >
+            <button class="absolute right-3 top-3" (click)="closeDialog()">
+                <img src="assets/icons/close-circle.svg" alt="">
+            </button>
+            <div>
+                <div class="flex items-center justify-center">
+                    <div class="p-4 bg-green-100 rounded-full">
+                        <div>
+                            <img src="assets/icons/tick-circle.svg" class="z-10 bg-transparent" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center text-lg mt-3">
+                    Booking  Confirmed !!
+                </div>
+                <div class="text-center pb-3" >
+                    Booking ID: {{booking.id}}
+                </div>
+                <div class="pt-3 text-xl text-center font-medium border-t border-t-gray-200">
+                    {{ booking.name }}
+                </div>
+                <p class="text-xs text-gray-500 pt-2 text-center">
+                    {{booking.location}}
+                </p>
+                <div class="grid grid-cols-3 gap-3 mt-5">
+                    <div class="p-4 rounded-md border border-t-gray-200 flex items-center justify-center flex-col">
+                        <img width="24" ngSrc="assets/icons/calendar.svg" alt="" height="24">
+                        <span>
+                            19 Jan 2023
+                        </span>
+                    </div>
+                    <div class="p-4 rounded-md border border-t-gray-200 flex items-center justify-center flex-col">
+                        <img width="24" ngSrc="assets/icons/archive-book.svg" alt="" height="24">
+
+                        <span>
+                            9:00 PM - 10:00PM
+                        </span>
+                    </div>
+                    <div class="p-4 rounded-md border border-t-gray-200 flex items-center justify-center  flex-col">
+                        <img width="24" ngSrc="assets/icons/profile-2user.svg" alt="" height="23">
+                        <span>
+                            6 Quests
+                        </span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-5 mt-4">
+                    <button
+                            class="text-sm rounded-md bg-blue-500 p-3 flex items-center justify-center gap-2 text-white">
+                        <img width="24" src="assets/icons/location-white.svg" alt="">
+                        <span>
+                            Get Direction
+                        </span>
+                    </button>
+                    <button class="text-sm rounded-md bg-blue-500 p-3 flex items-center justify-center gap-2 text-white">
+                        <img src="assets/icons/archive-book-white.svg" alt="">
+                        <span>View Menu</span>
+                    </button>
+                    <button class="text-sm rounded-md bg-red-600 p-3 flex items-center justify-center gap-2 text-white">
+                        <img src="assets/icons/close-circle-white.svg" alt="">
+                        <span>
+                            Cancel Booking
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

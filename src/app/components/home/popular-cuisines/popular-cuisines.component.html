@@ -1,0 +1,22 @@
+<section class="pt-10">
+    <h3 class="bg-gradient-to-r text-4xl from-green-800 via-green-300 to-green-100 bg-clip-text text-transparent">
+        Popular Cusines for you
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mt-5">
+        @for (restauran of items();track $index) {
+            <div class="p-4 bg-white rounded-md flex items-center justify-center flex-col py-8">
+                <img src="assets/icons/vegetables.svg" alt="">
+                <div class="text-primary font-bold text-base">{{restauran.name}}</div>
+                <div class="text-xs text-gray-700">
+                    <span>
+                        {{restauran.restaurantsCount}}
+                    </span>
+                    <span>
+                        Restaurants
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
+</section>
