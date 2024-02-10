@@ -1,10 +1,13 @@
 import {ChangeDetectionStrategy, Component, computed, Input, signal} from '@angular/core';
 import {SelectItemInterface, SelectItemsInterface} from "../../../types";
+import {ClickOutsideDirective} from "../../../directives/click-outside.directive";
 
 @Component({
   selector: 'app-form-select',
   standalone: true,
-  imports: [],
+  imports: [
+    ClickOutsideDirective,
+  ],
   templateUrl: './form-select.component.html',
   styleUrl: './form-select.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -31,6 +34,10 @@ export class FormSelectComponent {
 
   toggle(): void {
     this.displayed.update(value => !value)
+  }
+
+  hide(): void {
+    this.displayed.set(false)
   }
 
   selectItem(item: SelectItemInterface): void {

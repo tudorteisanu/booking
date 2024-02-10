@@ -1,4 +1,4 @@
-<div class="rounded-md border border-gray-200 w-full relative">
+<div class="rounded-md border border-gray-200 w-full relative" (clickOutside)="hide()">
     <div class="flex items-center p-2 justify-between cursor-pointer" (click)="toggle()">
         @if(icon) {
             <img [src]="selectIcon" alt="">

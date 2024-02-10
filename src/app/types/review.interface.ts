@@ -4,5 +4,5 @@ export interface ReviewInterface {
   rating: number;
   image: string;
   text: string;
-  gallery: string[]
+  gallery: string[];
 }

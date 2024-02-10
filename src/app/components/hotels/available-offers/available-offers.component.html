@@ -1,0 +1,20 @@
+<section class="bg-white rounded-md p-4 mt-4">
+    <h3 class="text-dark-green text-xl">Available Offers</h3>
+<ul class="mt-4">
+    @for (offer of offers(); track $index) {
+        <li class="bg-light-green bg-opacity-5 border border-dark-green rounded-md p-2 mt-2 flex flex-col md:flex-row items-center justify-between">
+            <span class="text-sm text-dark-green font-medium">{{formattedText(offer)}}</span>
+            <span class="text-dark-green text-sm">
+                Offer availed <span class="text-light-green">{{offer.availed}}</span> times
+            </span>
+            <button class="px-3 py-2 bg-light-green rounded-md text-xs text-white">Avail offer</button>
+        </li>
+    }
+    <li class="w-full text-center mt-4 ">
+        <span class="text-info text-sm cursor-pointer hover:underline-offset-2 hover:underline">
+            See all offers(+10 more)
+        </span>
+    </li>
+</ul>
+</section>
+

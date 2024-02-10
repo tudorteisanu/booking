@@ -13,4 +13,11 @@ export const routes: Routes = [
     component: ProfileLayoutComponent,
     loadChildren: () => import('./pages/profile/profile.routes').then(m => m.profileRoutes)
   },
+
+  {
+    path: 'hotel',
+    component: MainLayoutComponent,
+    loadChildren: () => import('./pages/hotel/hotel.routes').then(m => m.hotelRoutes)
+  },
+
 ];

@@ -18,7 +18,7 @@ export class BookingCardComponent {
 
   getStatusClass(status: BookingStatus): string {
     if (status === BookingStatus.Confirmed) {
-      return 'text-green-500'
+      return 'text-light-green'
     }
 
     if (status === BookingStatus.Ended) {

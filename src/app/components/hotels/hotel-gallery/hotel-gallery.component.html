@@ -1,0 +1,23 @@
+<ul class="relative max-h-[320px] lg:max-h-[420px] h-full w-full max-w-full flex items-center justify-center overflow-hidden rounded-md">
+    <button
+            class="left-2 absolute top-1/2 -translate-y-1/2 bg-gray-100 p-1 rounded-md"
+            (click)="slidePrev()"
+    >
+        <img src="assets/icons/arrow-down.svg" class="rotate-90" alt="">
+    </button>
+
+    @for (item of gallery; track $index) {
+        @if ($index === activeIndex()) {
+            <div class="h-full w-full">
+                <app-hotel-gallery-item [url]="item.url" />
+            </div>
+        }
+    }
+
+    <button
+            class="absolute top-1/2 -translate-y-1/2 right-2 bg-gray-100 p-1 rounded-md"
+            (click)="slideNext()"
+    >
+        <img src="assets/icons/arrow-down.svg" class="-rotate-90" alt="">
+    </button>
+</ul>
