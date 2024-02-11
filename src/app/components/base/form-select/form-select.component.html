@@ -4,7 +4,7 @@
             <img [src]="selectIcon" alt="">
         }
         <span
-                class="w-full px-2 text-gray-700 select-none "
+                class="w-full px-2 text-gray-600 select-none text-sm"
         >
             {{displayedText()}}
         </span>
@@ -13,7 +13,7 @@
         @if(displayed()) {
             <ul class="absolute top-12 left-0 bg-white w-full shadow rounded-md max-h-[300px] overflow-y-auto">
                 @for (item of items; track item.value) {
-                    <li class="p-2 cursor-pointer hover:bg-gray-100" (click)="selectItem(item)">
+                    <li class="p-2 text-gray-500 cursor-pointer hover:bg-gray-100" (click)="selectItem(item)">
                         {{item.text}}
                     </li>
                 }

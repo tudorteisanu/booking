@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, computed, Input, signal} from '@angular/core';
-import {NgClass} from "@angular/common";
+import { ChangeDetectionStrategy, Component, computed, Input, signal } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-accordion',
@@ -15,14 +15,14 @@ export class AccordionComponent {
   show = signal<boolean>(true);
 
   toggle(): void {
-    this.show.update((value) => !value)
+    this.show.update((value) => !value);
   }
 
   contentClass = computed(() => {
     if (this.show()) {
-      return 'min-h-[50px]'
+      return 'min-h-[50px]';
     }
 
-    return 'min-h-0 overflow-hidden'
+    return 'min-h-0 overflow-hidden';
   });
 }

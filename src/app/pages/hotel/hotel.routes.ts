@@ -1,9 +1,9 @@
-import {Routes} from "@angular/router";
-import {HotelComponent} from "./hotel.component";
+import {Routes} from '@angular/router';
+import {HotelComponent} from './hotel.component';
 
 export const hotelRoutes: Routes = [
-  {
-    path: ':id',
-    component: HotelComponent,
-  }
-]
+    {
+        path: ':id',
+        component: HotelComponent,
+    }
+];

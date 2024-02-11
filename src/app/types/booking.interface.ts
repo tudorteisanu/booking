@@ -1,4 +1,4 @@
-import {BookingStatus} from "../enums";
+import {BookingStatus} from '../enums';
 
 export interface BookingInterface {
   date: string;

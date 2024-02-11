@@ -3,22 +3,22 @@
         <div>
             <img [src]="booking.image" alt="">
         </div>
-        <ul class="ml-3">
+        <ul class="ml-3 flex flex-col justify-between">
             <li class="flex items-center">
-                <img src="assets/icons/building.svg" alt="">
-                <span class="ml-1 text-xs text-dark-green">
+                <img width="16" height="16" ngSrc="assets/icons/building.svg" alt="">
+                <span class="ml-1 text-sm text-dark-green">
                 {{booking.name}}
             </span>
             </li>
             <li class="flex items-center mt-2">
-                <img src="assets/icons/location.svg" alt="">
-                <span class="ml-1 text-xs text-dark-green">
+                <img width="16" height="16" ngSrc="assets/icons/location.svg" alt="">
+                <span class="ml-1 text-sm text-dark-green">
                 {{booking.location}}
             </span>
             </li>
             <li class="flex items-center mt-2">
-                <img src="assets/icons/calendar.svg" alt="">
-                <span class="ml-1 text-xs text-dark-green">
+                <img width="16" height="16" ngSrc="assets/icons/calendar.svg" alt="">
+                <span class="ml-1 text-sm text-dark-green">
                 {{booking.date}}
             </span>
             </li>

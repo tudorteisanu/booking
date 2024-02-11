@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import {ReviewGalleryComponent} from "../../base/review-gallery/review-gallery.component";
+import {ReviewGalleryComponent} from '../../base/review-gallery/review-gallery.component';
+import {HotelReviewInterface} from '../../../types';
 
 @Component({
   selector: 'app-hotel-review-card',
@@ -12,5 +13,5 @@ import {ReviewGalleryComponent} from "../../base/review-gallery/review-gallery.c
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HotelReviewCardComponent {
-  @Input({required: true}) review: any;
+  @Input({required: true}) review!: HotelReviewInterface;
 }

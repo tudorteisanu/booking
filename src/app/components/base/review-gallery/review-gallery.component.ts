@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {HotelGalleryType} from '../../../types';
 
 @Component({
   selector: 'app-review-gallery',
@@ -9,5 +10,5 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReviewGalleryComponent {
-  @Input() gallery: any[] = [];
+  @Input() gallery: HotelGalleryType = [];
 }

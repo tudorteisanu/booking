@@ -1,6 +1,8 @@
-import {ChangeDetectionStrategy, Component, computed, signal} from '@angular/core';
-import {FoodCardComponent} from "../food-card/food-card.component";
-import {BasketInterface} from "../../../types";
+import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { FoodCardComponent } from '../food-card/food-card.component';
+import { BasketInterface } from '../../../types';
+import { effect } from '@angular/core';
+import { isEqual, cloneDeep, update } from 'lodash';
 
 @Component({
   selector: 'app-basket',
@@ -46,19 +48,23 @@ export class BasketComponent {
       image: 'assets/images/food.png',
       count: 2
     },
-  ])
+  ]);
   totalCost = computed(() => {
-    return this.chosenFood().reduce((acc, item)=> acc + (item.price * item.count), 0 )
+    return this.chosenFood().reduce((acc, item) => acc + (item.price * item.count), 0);
+  }, {
+    equal: isEqual
+  }
+  );
+  totalCount = effect(() => {
+    console.log('Food was changed!');
+
   })
 
   updateFoodCount(index: number, count: number): void {
     this.chosenFood.update(value => {
-      value[index] = {
-        ...value[index],
-        count
-      }
+      update(value[index], 'count', () => count)
 
-      return value;
-    })
+      return cloneDeep(value);
+    });
   }
 }
