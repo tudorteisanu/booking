@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { FoodCardComponent } from '../food-card/food-card.component';
 import { BasketInterface } from '../../../types';
-import { effect } from '@angular/core';
 import { isEqual, cloneDeep, update } from 'lodash';
 
 @Component({
@@ -55,10 +54,6 @@ export class BasketComponent {
     equal: isEqual
   }
   );
-  totalCount = effect(() => {
-    console.log('Food was changed!');
-
-  })
 
   updateFoodCount(index: number, count: number): void {
     this.chosenFood.update(value => {
