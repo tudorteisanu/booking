@@ -1,4 +1,4 @@
-<section class="flex h-full items-stretch gap-4">
+<section class="flex h-full items-stretch gap-8">
     <div class="h-full w-full">
         <app-hotel-gallery [gallery]="hotel.gallery"/>
         <div class="mt-4">
@@ -10,8 +10,22 @@
         <app-reviews-and-ratings />
         <app-reviews />
     </div>
-    <aside class="w-[450px]">
-        2
+    <aside class="w-full">
+        <div class="max-w-[460px] w-full">
+            <div>
+                <h3 class="text-xl text-dark-green pb-4 pl-8">Choose date</h3>
+                <app-calendar/>
+            </div>
+            <app-time-slot />
+            <app-basket />
+            <app-basket-booking-details />
+            <app-basket-discount />
+            <button class="bg-light-green w-full rounded-md mt-4 p-4">
+                <span class="text-white">
+                    Book a table
+                </span>
+            </button>
+        </div>
     </aside>
 </section>
 

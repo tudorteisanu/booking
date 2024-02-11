@@ -7,6 +7,13 @@ import {RestaurantMenusComponent} from "../../components/hotels/restaurant-menus
 import {FoodMenuComponent} from "../../components/hotels/food-menu/food-menu.component";
 import {ReviewsAndRatingsComponent} from "../../components/hotels/reviews-and-ratings/reviews-and-ratings.component";
 import {ReviewsComponent} from "../../components/hotels/reviews/reviews.component";
+import {CalendarComponent} from "../../components/base/calendar/calendar.component";
+import {TimeSlotComponent} from "../../components/hotels/time-slot/time-slot.component";
+import {BasketComponent} from "../../components/hotels/basket/basket.component";
+import {
+  BasketBookingDetailsComponent
+} from "../../components/hotels/basket-booking-details/basket-booking-details.component";
+import {BasketDiscountComponent} from "../../components/hotels/basket-discount/basket-discount.component";
 
 @Component({
   selector: 'app-hotel',
@@ -18,7 +25,12 @@ import {ReviewsComponent} from "../../components/hotels/reviews/reviews.componen
     RestaurantMenusComponent,
     FoodMenuComponent,
     ReviewsAndRatingsComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    CalendarComponent,
+    TimeSlotComponent,
+    BasketComponent,
+    BasketBookingDetailsComponent,
+    BasketDiscountComponent
   ],
   templateUrl: './hotel.component.html',
   styleUrl: './hotel.component.css'

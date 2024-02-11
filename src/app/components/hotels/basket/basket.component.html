@@ -1,0 +1,16 @@
+<div class="mt-6">
+    <h3 class="text-dark-green text-xl pl-4">Food Chosen</h3>
+    <div class="p-4 rounded-md bg-white mt-4">
+        @for (item of chosenFood(); track $index) {
+            <app-food-card (updateCount)="updateFoodCount($index, $event)" [food]="item" />
+        }
+        <div class="flex items-center justify-between text-lg text-dark-green border-t border-t-gray-200 pt-4 mt-4" >
+            <span>
+                Total Cost:
+            </span>
+            <span>
+                ${{totalCost()}}
+            </span>
+        </div>
+    </div>
+</div>

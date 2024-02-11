@@ -1,0 +1,43 @@
+<div class="bg-white p-4 rounded-md">
+    <div class="flex items-center justify-between border-b border-b-gray-200">
+        <div class="py-2">
+            {{currentDate().format('MMMM YYYY')}}
+        </div>
+        <div>
+            <button (click)="changeMonth(-1)">
+                <img width="16" height="16" ngSrc="assets/icons/arrow-down.svg" class="rotate-90" alt="">
+            </button>
+            <button (click)="changeMonth(1)" class="ml-4">
+                <img width="16" height="16" ngSrc="assets/icons/arrow-down.svg" class="-rotate-90" alt="">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="grid grid-cols-7 gap-2 text-xs text-gray-500 pt-4">
+        <div>MON</div>
+        <div>TUE</div>
+        <div>WED</div>
+        <div>THU</div>
+        <div>FRI</div>
+        <div>SAT</div>
+        <div>SUN</div>
+        @for (day of days(); track day) {
+            <button
+                    [disabled]="!currentDate().isSame(day, 'month')"
+                    (click)="setDate(day)"
+                    class="disabled:text-gray-300 w-10 h-10"
+            >
+                <span
+                        class=" rounded-full p-1.5"
+                        [ngClass]="{
+                        'bg-light-green text-white ': selectedDate()?.isSame(day),
+                        'border border-info': day.isToday()
+                    }"
+                >
+                    {{day.format('DD')}}
+                </span>
+            </button>
+        }
+    </div>
+</div>
