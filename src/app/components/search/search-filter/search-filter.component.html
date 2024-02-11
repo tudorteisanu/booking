@@ -1,0 +1,26 @@
+<div class="bg-white p-4 rounded-md w-[300px]">
+    <div>
+        @for (category of filter(); track $index) {
+            <div [ngClass]="{
+            'mt-5': !$first
+            }">
+                {{ category.name }}
+            </div>
+            <ul class="pl-2">
+                @for (item of category.items; track $index) {
+                    <li class="text-sm py-2 flex items-center gap-2">
+                        <div
+                                class="border border-gray-500 w-4 h-4"
+                                [ngClass]="{
+                                    'rounded-full border-2': !category.multiple,
+                                }"
+                        ></div>
+                        <span class="text-gray-700">
+                            {{item.text}}
+                        </span>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>

@@ -1,0 +1,48 @@
+
+<div class="flex flex-col gap-4 mt-4">
+    @for (hotel of hotels(); track hotel.id) {
+        <div class="flex items-center gap-4 bg-white rounded-md p-4">
+            <img [src]="hotel.image" alt="">
+            <div class="flex gap-2 flex-col">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-light-green">
+                        {{hotel.name}}
+                    </h3>
+                    <div class="flex items-center gap-2 text-sm">
+                        <img src="assets/icons/star-bordered.svg" width="12" alt="">
+                        <span class="text-dark-green">
+                            {{hotel.rating}} Starts
+                        </span>
+                        <div class="w-px h-3 bg-dark-green"></div>
+                        <span class="text-light-green">
+                            {{hotel.reviews}} Reviews
+                        </span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2">
+                        <img width="16" src="assets/icons/location.svg" alt="">
+                        <span class="text-light-green text-sm">
+                            {{hotel.location}}
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <img src="assets/icons/archive-book.svg" alt="">
+                        <span class="text-light-green text-sm">
+                            {{hotel.menu}}
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <img src="assets/icons/archive-book.svg" alt="">
+                        <span class="text-light-green text-sm">
+                            {{hotel.foodType}}
+                        </span>
+                    </div>
+                </div>
+                <p class="text-gray-500 text-xs text-justify">
+                    {{hotel.description}}
+                </p>
+            </div>
+        </div>
+    }
+</div>
