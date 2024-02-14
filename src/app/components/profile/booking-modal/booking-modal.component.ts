@@ -1,18 +1,21 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, input, Output} from '@angular/core';
-import {BookingInterface} from '../../../types';
-import {ClickOutsideDirective} from '../../../directives/click-outside.directive';
-import {NgOptimizedImage} from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  input,
+  Output,
+} from '@angular/core';
+import { BookingInterface } from '../../../types';
+import { ClickOutsideDirective } from '../../../directives/click-outside.directive';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
-    selector: 'app-booking-modal',
-    standalone: true,
-    imports: [
-        ClickOutsideDirective,
-        NgOptimizedImage,
-    ],
-    templateUrl: './booking-modal.component.html',
-    styleUrl: './booking-modal.component.css',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-booking-modal',
+  standalone: true,
+  imports: [ClickOutsideDirective, NgOptimizedImage],
+  templateUrl: './booking-modal.component.html',
+  styleUrl: './booking-modal.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BookingModalComponent {
   booking = input.required<BookingInterface>();
@@ -22,6 +25,6 @@ export class BookingModalComponent {
   displayedChange = new EventEmitter();
 
   closeDialog(): void {
-    this.displayedChange.emit(false)
+    this.displayedChange.emit(false);
   }
 }

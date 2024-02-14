@@ -1,14 +1,14 @@
-import {MediaInterface} from './media.interface';
+import { MediaInterface } from './media.interface';
 
 export interface HotelWorkTimeInterface {
-    from: string;
-    to: string;
+  from: string;
+  to: string;
 }
 
 export interface HotelDistanceInterface {
-    count: number;
-    unit: string;
-    place: string;
+  count: number;
+  unit: string;
+  place: string;
 }
 
 export type HotelGalleryType = MediaInterface[];

@@ -1,6 +1,6 @@
-export {BookingInterface} from './booking.interface';
-export {RestaurantInterface} from './restaurant.interface';
-export {ReviewInterface} from './review.interface';
+export { BookingInterface } from './booking.interface';
+export { RestaurantInterface } from './restaurant.interface';
+export { ReviewInterface } from './review.interface';
 export * from './select.interface';
 export * from './hotel.interface';
 export * from './media.interface';

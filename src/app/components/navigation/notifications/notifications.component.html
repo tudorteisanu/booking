@@ -1,39 +1,42 @@
 <div class="relative" (clickOutside)="hide()">
-    <button
-            (click)="toggle()"
-            class="flex items-center justify-center w-12 h-12 bg-primary rounded-md cursor-pointer">
-        <img src="assets/icons/bell.svg" alt="">
-    </button>
-    <div class="relative">
-        @if (displayed()) {
-            <ul
-                    class="absolute top-2 right-0  bg-white min-w-[350px] rounded-md shadow border border-gray-200"
+  <button
+    (click)="toggle()"
+    class="flex items-center justify-center w-12 h-12 bg-primary rounded-md cursor-pointer"
+  >
+    <img src="assets/icons/bell.svg" alt="" />
+  </button>
+  <div class="relative">
+    @if (displayed()) {
+      <ul
+        class="absolute top-2 right-0 bg-white min-w-[350px] rounded-md shadow border border-gray-200"
+      >
+        @for (notification of items; track $index) {
+          <li
+            class="flex items-center gap-2 p-4 border-b border-b-gray-200 hover:bg-gray-100 cursor-pointer"
+          >
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center"
+              [ngClass]="getNotificationIconClass(notification.type)"
             >
-                @for (notification of items; track $index) {
-                    <li class="flex items-center gap-2 p-4 border-b border-b-gray-200 hover:bg-gray-100 cursor-pointer">
-                        <div
-                                class="w-10 h-10 rounded-full flex items-center justify-center"
-                                [ngClass]="getNotificationIconClass(notification.type)"
-                        >
-                            <img [src]="getNotificationIcon(notification.type)" alt="">
-                        </div>
-                        <div>
-                            <span
-                                    [ngClass]="getNotificationColor(notification.type)"
-                                    class="text-sm font-bold"
-                            >
-                                {{notification.title}}
-                            </span>
-                            <p
-                                    [ngClass]="getNotificationColor(notification.type)"
-                                    class="text-xs mt-1">
-                                {{notification.text}}
-                            </p>
-                        </div>
-                    </li>
-                }
-            </ul>
+              <img [src]="getNotificationIcon(notification.type)" alt="" />
+            </div>
+            <div>
+              <span
+                [ngClass]="getNotificationColor(notification.type)"
+                class="text-sm font-bold"
+              >
+                {{ notification.title }}
+              </span>
+              <p
+                [ngClass]="getNotificationColor(notification.type)"
+                class="text-xs mt-1"
+              >
+                {{ notification.text }}
+              </p>
+            </div>
+          </li>
         }
-    </div>
-
+      </ul>
+    }
+  </div>
 </div>

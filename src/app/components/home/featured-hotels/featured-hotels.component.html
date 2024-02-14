@@ -1,32 +1,37 @@
 <section class="pt-10">
-    <h3 class="bg-gradient-to-r text-4xl from-green-800 via-green-300 to-green-100 bg-clip-text text-transparent">
-        {{ title() }}
-        <a
-                routerLink="/search-hotel"
-                class="text-base text-primary underline underline-offset-2">See all</a>
-    </h3>
+  <h3
+    class="bg-gradient-to-r text-4xl from-green-800 via-green-300 to-green-100 bg-clip-text text-transparent"
+  >
+    {{ title() }}
+    <a
+      routerLink="/search-hotel"
+      class="text-base text-primary underline underline-offset-2"
+      >See all</a
+    >
+  </h3>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-5">
-        @for (hotel of featuredHotels(); track hotel.id) {
-            <div class="p-3 bg-white shadow rounded-md cursor-pointer hover:scale-105 hover:shadow-2xl"
-                 [routerLink]="['/hotel', hotel.id]">
-                <img [src]="hotel.image" alt="">
-                <div class="py-2 flex items-center justify-between">
-                    <span class="text-primary font-bold ">
-                        {{hotel.name}}
-                    </span>
-                    <span class="bg-primary p-1 rounded-md text-white text-xs">
-                        {{hotel.rating.toFixed(1)}}
-                    </span>
-                </div>
-                <div class="text-xs text-gray-500">
-                    {{hotel.location}}
-                </div>
-                <div class="text-xs text-gray-500 pt-2">
-                    {{hotel.detail}}
-                </div>
-            </div>
-        }
-    </div>
-
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-5">
+    @for (hotel of featuredHotels(); track hotel.id) {
+      <div
+        class="p-3 bg-white shadow rounded-md cursor-pointer hover:scale-105 hover:shadow-2xl"
+        [routerLink]="['/hotel', hotel.id]"
+      >
+        <img [src]="hotel.image" alt="" />
+        <div class="py-2 flex items-center justify-between">
+          <span class="text-primary font-bold">
+            {{ hotel.name }}
+          </span>
+          <span class="bg-primary p-1 rounded-md text-white text-xs">
+            {{ hotel.rating.toFixed(1) }}
+          </span>
+        </div>
+        <div class="text-xs text-gray-500">
+          {{ hotel.location }}
+        </div>
+        <div class="text-xs text-gray-500 pt-2">
+          {{ hotel.detail }}
+        </div>
+      </div>
+    }
+  </div>
 </section>

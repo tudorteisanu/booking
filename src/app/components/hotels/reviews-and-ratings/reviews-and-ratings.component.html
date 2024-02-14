@@ -1,46 +1,38 @@
 <section class="p-4 mt-4 bg-white rounded-md">
-    <h3 class="text-dark-green text-xl border-b border-b-gray-200 py-4">
-        Reviews and Ratings
-    </h3>
-    <div class="flex items-center flex-col lg:flex-row gap-10 p-4 py-10">
-        <div  class="flex flex-col items-center px-5">
-            <span class="text-gray-500 text-nowrap">
-                Overall Rating & Reviews
-            </span>
-            <div class="py-4">
-                <span class="text-light-green text-7xl">
-                    4.5
-                </span>
-                <div class="pt-4">
-                    <app-rating [rating]="4.5"/>
-                </div>
-
-            </div>
-            <div class="flex items-center flex-nowrap gap-2">
-                <span class="text-gray-500 text-nowrap">
-                  Based on 200 reviews
-            </span>
-                <span class="text-light-green text-nowrap underline underline-offset-2">
-                 Rate now
-            </span>
-            </div>
-
+  <h3 class="text-dark-green text-xl border-b border-b-gray-200 py-4">
+    Reviews and Ratings
+  </h3>
+  <div class="flex items-center flex-col lg:flex-row gap-10 p-4 py-10">
+    <div class="flex flex-col items-center px-5">
+      <span class="text-gray-500 text-nowrap"> Overall Rating & Reviews </span>
+      <div class="py-4">
+        <span class="text-light-green text-7xl"> 4.5 </span>
+        <div class="pt-4">
+          <app-rating [rating]="4.5" />
         </div>
-        <div class="w-full h-full">
-            <div class="w-full  flex flex-col justify-between h-full content-between">
-                @for (item of ratings(); track $index) {
-                    <div class="flex items-center justify-end gap-2 ">
-                        <span class="text-dark-green text-sm">{{ item.name }}</span>
-                        <div class="min-w-[100px] w-fit">
-                            <app-rating  [rating]="item.rating"/>
-                        </div>
-                        <div class="min-w-[200px] max-w-full w-full">
-                            <app-rating-bar [rating]="item.rating"/>
-                        </div>
-                        <span class="text-dark-green text-xs" >{{item.count}}</span>
-                    </div>
-                }
-            </div>
-        </div>
+      </div>
+      <div class="flex items-center flex-nowrap gap-2">
+        <span class="text-gray-500 text-nowrap"> Based on 200 reviews </span>
+        <span class="text-light-green text-nowrap underline underline-offset-2">
+          Rate now
+        </span>
+      </div>
     </div>
+    <div class="w-full h-full">
+      <div class="w-full flex flex-col justify-between h-full content-between">
+        @for (item of ratings(); track $index) {
+          <div class="flex items-center justify-end gap-2">
+            <span class="text-dark-green text-sm">{{ item.name }}</span>
+            <div class="min-w-[100px] w-fit">
+              <app-rating [rating]="item.rating" />
+            </div>
+            <div class="min-w-[200px] max-w-full w-full">
+              <app-rating-bar [rating]="item.rating" />
+            </div>
+            <span class="text-dark-green text-xs">{{ item.count }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
 </section>

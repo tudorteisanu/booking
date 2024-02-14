@@ -1,17 +1,20 @@
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
-import { FoodCardComponent } from '../food-card/food-card.component';
-import { BasketInterface } from '../../../types';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  signal,
+} from '@angular/core';
+import { BasketInterface } from '@/types';
 import { isEqual, cloneDeep, update } from 'lodash';
+import { FoodCardComponent } from '../food-card/food-card.component';
 
 @Component({
   selector: 'app-basket',
   standalone: true,
-  imports: [
-    FoodCardComponent
-  ],
+  imports: [FoodCardComponent],
   templateUrl: './basket.component.html',
   styleUrl: './basket.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BasketComponent {
   chosenFood = signal<BasketInterface[]>([
@@ -21,7 +24,7 @@ export class BasketComponent {
       category: 'Crisp & refreshing from garden',
       price: 30,
       image: 'assets/images/food.png',
-      count: 2
+      count: 2,
     },
     {
       id: 1,
@@ -29,7 +32,7 @@ export class BasketComponent {
       category: 'Crisp & refreshing from garden',
       price: 30,
       image: 'assets/images/food.png',
-      count: 2
+      count: 2,
     },
     {
       id: 1,
@@ -37,7 +40,7 @@ export class BasketComponent {
       category: 'Crisp & refreshing from garden',
       price: 30,
       image: 'assets/images/food.png',
-      count: 2
+      count: 2,
     },
     {
       id: 1,
@@ -45,19 +48,24 @@ export class BasketComponent {
       category: 'Crisp & refreshing from garden',
       price: 30,
       image: 'assets/images/food.png',
-      count: 2
+      count: 2,
     },
   ]);
-  totalCost = computed(() => {
-    return this.chosenFood().reduce((acc, item) => acc + (item.price * item.count), 0);
-  }, {
-    equal: isEqual
-  }
+  totalCost = computed(
+    () => {
+      return this.chosenFood().reduce(
+        (acc, item) => acc + item.price * item.count,
+        0,
+      );
+    },
+    {
+      equal: isEqual,
+    },
   );
 
   updateFoodCount(index: number, count: number): void {
-    this.chosenFood.update(value => {
-      update(value[index], 'count', () => count)
+    this.chosenFood.update((value) => {
+      update(value[index], 'count', () => count);
 
       return cloneDeep(value);
     });

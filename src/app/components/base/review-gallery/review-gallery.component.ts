@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, input} from '@angular/core';
-import {HotelGalleryType} from '../../../types';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { HotelGalleryType } from '@/types';
 
 @Component({
   selector: 'app-review-gallery',
@@ -7,7 +7,7 @@ import {HotelGalleryType} from '../../../types';
   imports: [],
   templateUrl: './review-gallery.component.html',
   styleUrl: './review-gallery.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReviewGalleryComponent {
   gallery = input.required<HotelGalleryType>();

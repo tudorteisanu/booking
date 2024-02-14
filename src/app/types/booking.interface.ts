@@ -1,4 +1,4 @@
-import {BookingStatus} from '../enums';
+import { BookingStatus } from '@/enums';
 
 export interface BookingInterface {
   date: string;
@@ -6,5 +6,5 @@ export interface BookingInterface {
   name: string;
   location: string;
   id: string;
-  status: BookingStatus
+  status: BookingStatus;
 }

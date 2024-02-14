@@ -1,17 +1,24 @@
-
-@if(url()) {
-    <div class="w-full h-full flex items-center justify-center">
-        <img [src]="url()" alt="" class="w-full" (load)="setLoaded()" [hidden]="!loaded()" >
-        @if(!loaded()) {
-            <div class="min-h-[200px] w-full h-full bg-gray-200 flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full border border-dark-green border-t-0 animate-spin"></span>
-            </div>
-        }
-    </div>
+@if (url()) {
+  <div class="w-full h-full flex items-center justify-center">
+    <img
+      [src]="url()"
+      alt=""
+      class="w-full"
+      (load)="setLoaded()"
+      [hidden]="!loaded()"
+    />
+    @if (!loaded()) {
+      <div
+        class="min-h-[200px] w-full h-full bg-gray-200 flex items-center justify-center"
+      >
+        <span
+          class="w-10 h-10 rounded-full border border-dark-green border-t-0 animate-spin"
+        ></span>
+      </div>
+    }
+  </div>
 } @else {
-    <div class="w-full h-full flex items-center justify-center">
-        <span class="text-gray-500">
-            Please, provide a valid url.
-        </span>
-    </div>
+  <div class="w-full h-full flex items-center justify-center">
+    <span class="text-gray-500"> Please, provide a valid url. </span>
+  </div>
 }

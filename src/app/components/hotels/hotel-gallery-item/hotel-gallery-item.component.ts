@@ -1,17 +1,23 @@
-import {Component, input, signal} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  signal,
+} from '@angular/core';
 
 @Component({
-    selector: 'app-hotel-gallery-item',
-    standalone: true,
-    imports: [],
-    templateUrl: './hotel-gallery-item.component.html',
-    styleUrl: './hotel-gallery-item.component.css'
+  selector: 'app-hotel-gallery-item',
+  standalone: true,
+  imports: [],
+  templateUrl: './hotel-gallery-item.component.html',
+  styleUrl: './hotel-gallery-item.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HotelGalleryItemComponent {
   url = input('');
   loaded = signal(false);
 
   setLoaded(): void {
-      this.loaded.set(true);
+    this.loaded.set(true);
   }
 }

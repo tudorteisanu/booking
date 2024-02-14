@@ -1,4 +1,4 @@
-import {MediaInterface} from './media.interface';
+import { MediaInterface } from './media.interface';
 
 export interface HotelReviewInterface {
   id: number;

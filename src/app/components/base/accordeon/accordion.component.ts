@@ -1,4 +1,9 @@
-import {ChangeDetectionStrategy, Component, computed, signal} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  signal,
+} from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({

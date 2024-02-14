@@ -1,65 +1,61 @@
 <section>
-    <div class="flex items-center justify-between">
-        <h3 class="text-2xl text-dark-green">
-            Manage Payment Methods
-        </h3>
-        <div class="max-w-[300px] w-full">
-            <app-search placeholder="Search restaurant and cuisines..." />
+  <div class="flex items-center justify-between">
+    <h3 class="text-2xl text-dark-green">Manage Payment Methods</h3>
+    <div class="max-w-[300px] w-full">
+      <app-search placeholder="Search restaurant and cuisines..." />
+    </div>
+  </div>
+  <div class="mt-5">
+    <app-accordion>
+      <div label class="flex items-center gap-2">
+        <img src="assets/icons/card.svg" alt="" />
+        <span class="text-gray-500"> Credit/Debit card </span>
+      </div>
+      <form content class="flex gap-2 flex-col">
+        <app-text-field label="Enter your name..." />
+        <app-text-field
+          label="Enter card number"
+          icon="assets/icons/eye.svg"
+          inputType="tel"
+        />
+        <div class="grid grid-cols-2 gap-2 w-full">
+          <app-text-field label="CVV" inputType="tel" />
+          <app-text-field inputType="month" label="Expiry Date Month" />
         </div>
-    </div>
-    <div class="mt-5">
-        <app-accordion>
-            <div label class="flex items-center gap-2">
-                <img src="assets/icons/card.svg" alt="">
-                <span class="text-gray-500">
-                    Credit/Debit card
-                </span>
-            </div>
-            <form content class="flex gap-2 flex-col">
-               <app-text-field label="Enter your name..." />
-               <app-text-field
-                       label="Enter card number"
-                       icon="assets/icons/eye.svg"
-                       inputType="tel"
-               />
-                <div class="grid grid-cols-2 gap-2 w-full">
-                   <app-text-field label="CVV" inputType="tel"/>
-                   <app-text-field inputType="month" label="Expiry Date Month" />
-                </div>
-                <div class="flex w-full justify-end mt-4">
-                    <button
-                            type="submit"
-                            class="px-3 py-2 rounded-md text-gray-100 text-sm bg-primary">Save Details</button>
-
-                </div>
-            </form>
-        </app-accordion>
-    </div>
-    <div class="mt-5">
-        <app-accordion>
-            <div label class="flex items-center gap-2">
-                <img src="assets/icons/card.svg" alt="">
-                <span class="text-gray-500">
-                    UPI
-                </span>
-            </div>
-            <form content >
-                <div class="grid grid-cols-2 gap-2">
-                    <app-form-select
-                        label="Select payment method"
-                        [items]="paymentMethods"
-                    />
-                    <app-text-field label="Enter UPI ID"/>
-                </div>
-                <div class="flex w-full justify-end mt-4">
-                    <button
-                            type="submit"
-                            class="px-3 py-2 rounded-md text-gray-100 text-sm bg-primary">
-                        Save Details
-                    </button>
-
-                </div>
-               </form>
-        </app-accordion>
-    </div>
+        <div class="flex w-full justify-end mt-4">
+          <button
+            type="submit"
+            class="px-3 py-2 rounded-md text-gray-100 text-sm bg-primary"
+          >
+            Save Details
+          </button>
+        </div>
+      </form>
+    </app-accordion>
+  </div>
+  <div class="mt-5">
+    <app-accordion>
+      <div label class="flex items-center gap-2">
+        <img src="assets/icons/card.svg" alt="" />
+        <span class="text-gray-500"> UPI </span>
+      </div>
+      <form content>
+        <div class="grid grid-cols-2 gap-2">
+          <app-form-select
+            label="Select payment method"
+            [items]="paymentMethods"
+          />
+          <app-text-field label="Enter UPI ID" />
+        </div>
+        <div class="flex w-full justify-end mt-4">
+          <button
+            type="submit"
+            class="px-3 py-2 rounded-md text-gray-100 text-sm bg-primary"
+          >
+            Save Details
+          </button>
+        </div>
+      </form>
+    </app-accordion>
+  </div>
 </section>
