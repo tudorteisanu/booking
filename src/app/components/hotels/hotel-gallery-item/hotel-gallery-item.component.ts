@@ -1,4 +1,4 @@
-import {Component, Input, signal} from '@angular/core';
+import {Component, input, signal} from '@angular/core';
 
 @Component({
     selector: 'app-hotel-gallery-item',
@@ -8,8 +8,7 @@ import {Component, Input, signal} from '@angular/core';
     styleUrl: './hotel-gallery-item.component.css'
 })
 export class HotelGalleryItemComponent {
-  @Input() url: string = '';
-
+  url = input('');
   loaded = signal(false);
 
   setLoaded(): void {

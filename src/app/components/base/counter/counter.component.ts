@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, input, Output} from '@angular/core';
 
 @Component({
     selector: 'app-counter',
@@ -9,15 +9,15 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CounterComponent {
-  @Input() count: number = 0;
-  @Input() maxCount: number = 50;
+  count = input<number>(0);
+  maxCount = input<number>(50);
   @Output() countChange = new EventEmitter();
 
   setCount(value: number): void {
-      if (this.count + value < 0 || this.count+value > this.maxCount) {
+      if (this.count() + value < 0 || this.count()+value > this.maxCount()) {
           return;
       }
 
-      this.countChange.emit(this.count+value);
+      this.countChange.emit(this.count()+value);
   }
 }

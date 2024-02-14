@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input} from '@angular/core';
 import {RestaurantInterface} from '../../../types';
 import {NgOptimizedImage} from '@angular/common';
 
@@ -13,5 +13,5 @@ import {NgOptimizedImage} from '@angular/common';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RestaurantCardComponent {
-  @Input({required: true}) restaurant!: RestaurantInterface;
+  restaurant  = input.required<RestaurantInterface>();
 }

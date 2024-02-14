@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input} from '@angular/core';
 import {ReviewInterface} from '../../../types';
 import {RatingComponent} from '../../base/rating/rating.component';
 import {ReviewGalleryComponent} from '../../base/review-gallery/review-gallery.component';
@@ -15,5 +15,5 @@ import {ReviewGalleryComponent} from '../../base/review-gallery/review-gallery.c
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReviewCardComponent {
-  @Input() review!: ReviewInterface;
+  review = input.required<ReviewInterface>();
 }

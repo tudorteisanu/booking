@@ -1,11 +1,11 @@
 <div class="flex rounded-md bg-white p-3 gap-4">
     <div>
-        <img [src]="restaurant.image" alt="">
+        <img [src]="restaurant().image" alt="">
     </div>
     <div class="flex flex-col w-full">
         <div class="flex items-center justify-between">
             <h4 class="text-xl font-bold text-dark-green">
-                {{restaurant.name}}
+                {{restaurant().name}}
             </h4>
             <button class="text-sm text-red-700">
                 remove
@@ -16,19 +16,19 @@
             <li class="flex items-center gap-1 cursor-pointer">
                 <img width="16" height="16" ngSrc="assets/icons/location.svg" alt="">
                 <span class="text-xs text-dark-green">
-                    {{restaurant.location}}
+                    {{restaurant().location}}
                 </span>
             </li>
             <li class="flex items-center gap-1 cursor-pointer">
                 <img width="16" height="16" ngSrc="assets/icons/archive-book.svg" alt="">
                 <span class="text-xs text-dark-green">
-                    {{restaurant.menu}}
+                    {{restaurant().menu}}
                 </span>
             </li>
             <li class="flex items-center gap-1 cursor-pointer">
                 <img width="16" height="16" ngSrc="assets/icons/archive-book.svg" alt="">
                 <span class="text-xs text-dark-green">
-                    {{restaurant.foodType}}
+                    {{restaurant().foodType}}
                 </span>
             </li>
         </ul>

@@ -6,19 +6,19 @@
                 <img class="rounded-full" src="assets/images/profile-image-small.png" alt="">
             </div>
             <div class="flex flex-col">
-                <span>{{review.name}}</span>
-                <span class="text-gray-500 text-sm">reviewed {{review.reviewCount}} restaurants</span>
+                <span>{{review().name}}</span>
+                <span class="text-gray-500 text-sm">reviewed {{review().reviewCount}} restaurants</span>
             </div>
         </div>
         <div class="flex items-center gap-2">
             <span class="text-light-green text-sm">
-                {{review.review}}
+                {{review().review}}
             </span>
             <img src="assets/icons/star-bordered.svg" alt="">
         </div>
     </div>
     <p class="text-gray-500 text-xs mt-2">
-        {{review.comment}}
+        {{review().comment}}
     </p>
-    <app-review-gallery [gallery]="review.gallery"/>
+    <app-review-gallery [gallery]="review().gallery"/>
 </div>

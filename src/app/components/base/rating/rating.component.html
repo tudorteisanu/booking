@@ -1,9 +1,9 @@
 <div class="w-full min-w-fit">
     <div class="flex flex-nowrap gap-1">
-        @for (item of filledStars; track item) {
+        @for (item of filledStars(); track item) {
             <img width="16" height="16" src="assets/icons/filled-star.svg" class="inline-block" alt="">
         }
-        @for (item of unfilledStars; track item) {
+        @for (item of unfilledStars(); track item) {
             <img width="16" height="16" src="assets/icons/star.svg" class="inline-block" alt="">
         }
     </div>

@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input} from '@angular/core';
 import {BookingInterface} from '../../../types';
 import {BookingStatus} from '../../../enums';
 import {NgClass, NgOptimizedImage} from '@angular/common';
@@ -13,8 +13,8 @@ import {BookingModalComponent} from '../booking-modal/booking-modal.component';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BookingCardComponent {
-  @Input({required: true}) booking!: BookingInterface;
-  isModalDisplayed = signal(false);
+  booking  = input.required<BookingInterface>();
+  isModalDisplayed = false;
 
   getStatusClass(status: BookingStatus): string {
       if (status === BookingStatus.Confirmed) {
@@ -29,6 +29,6 @@ export class BookingCardComponent {
   }
 
   showDetails(): void {
-      this.isModalDisplayed.set(true);
+      this.isModalDisplayed=true;
   }
 }

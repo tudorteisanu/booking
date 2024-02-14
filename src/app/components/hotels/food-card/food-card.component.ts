@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, input, Output} from '@angular/core';
 import {BasketInterface} from '../../../types';
 import {CounterComponent} from '../../base/counter/counter.component';
 
@@ -13,7 +13,7 @@ import {CounterComponent} from '../../base/counter/counter.component';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FoodCardComponent {
-  @Input({required: true}) food!: BasketInterface;
+  food = input.required<BasketInterface>();
   @Output() updateCount = new EventEmitter();
 
 

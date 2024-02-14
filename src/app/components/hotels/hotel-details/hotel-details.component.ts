@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, input} from '@angular/core';
 import {HotelInterface} from '../../../types';
 
 @Component({
@@ -9,5 +9,5 @@ import {HotelInterface} from '../../../types';
     styleUrl: './hotel-details.component.css'
 })
 export class HotelDetailsComponent {
-  @Input() hotel!: HotelInterface;
+  hotel = input.required<HotelInterface>();
 }

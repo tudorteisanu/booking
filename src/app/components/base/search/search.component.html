@@ -2,7 +2,7 @@
     <div class="flex items-center">
         <input class="border-none text-xs outline-none w-full"
                #searchInput
-               [placeholder]="placeholder"
+               [placeholder]="placeholder()"
                (input)="emitSearch()"/>
         <img src="../../../../assets/icons/loupe.svg" alt="">
     </div>

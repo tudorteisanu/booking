@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input} from '@angular/core';
 import {ReviewGalleryComponent} from '../../base/review-gallery/review-gallery.component';
 import {HotelReviewInterface} from '../../../types';
 
@@ -13,5 +13,5 @@ import {HotelReviewInterface} from '../../../types';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HotelReviewCardComponent {
-  @Input({required: true}) review!: HotelReviewInterface;
+  review = input.required<HotelReviewInterface>();
 }

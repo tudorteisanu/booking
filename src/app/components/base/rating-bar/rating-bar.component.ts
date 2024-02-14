@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
 import {NgStyle} from '@angular/common';
 
 @Component({
@@ -12,13 +12,7 @@ import {NgStyle} from '@angular/common';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RatingBarComponent {
-  @Input({required: true}) rating = 0;
-
-  get roundedRating(): number {
-      return Math.floor(this.rating);
-  }
-
-  get width(): string {
-      return `${this.roundedRating * 100 / 5}%`;
-  }
+   rating = input<number>(0);
+   roundedRating =  computed(() => Math.floor(this.rating()));
+   width = computed(() => `${this.roundedRating() * 100 / 5}%`);
 }

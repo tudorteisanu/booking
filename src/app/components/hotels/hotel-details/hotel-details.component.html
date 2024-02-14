@@ -1,18 +1,18 @@
 <section class="p-4 rounded-md bg-white">
     <div class="flex items-center justify-between pb-3 border-b border-b-gray-300">
-        <h1 class="text-xl text-primary font-bold">{{hotel.name}}</h1>
+        <h1 class="text-xl text-primary font-bold">{{hotel().name}}</h1>
         <div class="flex items-center gap-2">
 
             <img src="assets/icons/star-gray.svg" alt="">
             <div class="text-sm leading-4 text-gray-500 flex items-center">
                 <span >
-                     {{hotel.rating}}
+                     {{hotel().rating}}
                 </span>
                 <span class="border-r border-r-gray-500 pr-2">Stars</span>
             </div>
             <div class="underline text-green-600 underline-offset-2 text-sm">
                 <span>
-                     {{hotel.reviews}}
+                     {{hotel().reviews}}
                 </span>
                 <span>Reviews</span>
             </div>
@@ -23,29 +23,29 @@
             <li class="flex items-center gap-2">
                 <img src="assets/icons/dollar-circle.svg" alt="">
                 <span>
-                    {{hotel.price}}
+                    {{hotel().price}}
                 </span>
             </li>
             <li class="flex items-center gap-2">
                 <img src="assets/icons/location-gray.svg" alt="">
                 <span>
-                    {{hotel.location}}
+                    {{hotel().location}}
                 </span>
             </li>
             <li class="flex items-center gap-2">
                 <img src="assets/icons/flag-2.svg" alt="">
                 <span class="text-green-600">
-                    {{ hotel.distance.count }} {{hotel.distance.unit}}
+                    {{ hotel().distance.count }} {{hotel().distance.unit}}
                 </span>
                 <span>
-                    from {{hotel.distance.place}}
+                    from {{hotel().distance.place}}
                 </span>
             </li>
             <li class="flex items-center gap-2">
                 <img src="assets/icons/clock.svg" alt="">
                 <span class="text-green-600">Open from</span>
                 <span>
-                    {{hotel.open.from}} - {{hotel.open.to}}
+                    {{hotel().open.from}} - {{hotel().open.to}}
                 </span>
                 <img src="assets/icons/info-circle.svg" alt="">
             </li>

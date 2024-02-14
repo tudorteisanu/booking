@@ -1,4 +1,12 @@
-import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  input,
+  Output,
+  ViewChild
+} from '@angular/core';
 
 @Component({
     selector: 'app-search',
@@ -9,7 +17,7 @@ import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Out
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent {
-  @Input() placeholder = '';
+  placeholder = input();
   @Output() search = new EventEmitter();
   @ViewChild('searchInput') searchInput!: ElementRef;
 

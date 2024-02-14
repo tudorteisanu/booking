@@ -1,4 +1,4 @@
-import {Component, Input, signal} from '@angular/core';
+import {Component, input, signal} from '@angular/core';
 import {HotelGalleryType} from '../../../types';
 import {NgClass} from '@angular/common';
 import {HotelGalleryItemComponent} from '../hotel-gallery-item/hotel-gallery-item.component';
@@ -14,8 +14,7 @@ import {HotelGalleryItemComponent} from '../hotel-gallery-item/hotel-gallery-ite
     styleUrl: './hotel-gallery.component.css'
 })
 export class HotelGalleryComponent {
-  @Input() gallery: HotelGalleryType = [];
-
+  gallery = input.required<HotelGalleryType>();
   activeIndex = signal(Math.round(Math.random()*this.gallery.length));
 
   slideNext(): void {

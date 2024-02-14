@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, WritableSignal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, input, Output} from '@angular/core';
 import {BookingInterface} from '../../../types';
 import {ClickOutsideDirective} from '../../../directives/click-outside.directive';
 import {NgOptimizedImage} from '@angular/common';
@@ -15,10 +15,13 @@ import {NgOptimizedImage} from '@angular/common';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookingModalComponent {
-  @Input({required: true}) booking!: BookingInterface;
-  @Input({required: true}) displayed!: WritableSignal<boolean>;
+  booking = input.required<BookingInterface>();
+  displayed = input.required<boolean>();
+
+  @Output()
+  displayedChange = new EventEmitter();
 
   closeDialog(): void {
-      this.displayed.set(false);
+    this.displayedChange.emit(false)
   }
 }

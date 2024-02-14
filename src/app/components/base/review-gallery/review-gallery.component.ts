@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input} from '@angular/core';
 import {HotelGalleryType} from '../../../types';
 
 @Component({
@@ -10,5 +10,5 @@ import {HotelGalleryType} from '../../../types';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReviewGalleryComponent {
-  @Input() gallery: HotelGalleryType = [];
+  gallery = input.required<HotelGalleryType>();
 }

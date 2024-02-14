@@ -1,4 +1,6 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input} from '@angular/core';
+
+type InputTypes = 'text'| 'password' | 'date' | 'tel' | 'month';
 
 @Component({
     selector: 'app-text-field',
@@ -9,8 +11,8 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TextFieldComponent {
-  @Input() label = '';
-  @Input() inputType = 'text';
-  @Input() icon = '';
-  @Input() prependIcon = '';
+  label = input<string>();
+  inputType = input<InputTypes>('text');
+  icon = input<string>();
+  prependIcon = input<string>();
 }

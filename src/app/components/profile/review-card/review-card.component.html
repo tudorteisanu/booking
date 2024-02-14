@@ -1,10 +1,10 @@
 <div class="bg-white rounded-md p-4">
     <div class="flex w-full justify-between">
         <div class="flex items-center gap-4">
-            <div><img [src]="review.image" alt=""></div>
+            <div><img [src]="review().image" alt=""></div>
             <div>
-                <span>{{review.name}}</span>
-                <app-rating [rating]="review.rating"/>
+                <span>{{review().name}}</span>
+                <app-rating [rating]="review().rating"/>
             </div>
         </div>
         <div>
@@ -14,7 +14,7 @@
         </div>
     </div>
     <p class="text-gray-500 mt-4 text-sm">
-        {{review.text}}
+        {{review().text}}
     </p>
-    <app-review-gallery [gallery]="review.gallery"/>
+    <app-review-gallery [gallery]="review().gallery"/>
 </div>

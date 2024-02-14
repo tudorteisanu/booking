@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, Input, signal } from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, signal} from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -10,8 +10,6 @@ import { NgClass } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccordionComponent {
-  @Input() label = '';
-
   show = signal<boolean>(true);
 
   toggle(): void {

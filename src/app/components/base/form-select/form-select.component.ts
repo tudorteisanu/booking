@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, computed, Input, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, input, signal} from '@angular/core';
 import {SelectItemInterface, SelectItemsInterface} from '../../../types';
 import {ClickOutsideDirective} from '../../../directives/click-outside.directive';
 
@@ -13,10 +13,9 @@ import {ClickOutsideDirective} from '../../../directives/click-outside.directive
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormSelectComponent {
-  @Input( ) label: string = '';
-  @Input( ) icon: string = '';
-  @Input( ) items: SelectItemsInterface = [];
-
+  label = input<string>('');
+  icon = input<string>('');
+  items = input<SelectItemsInterface>([]);
   displayed = signal(false);
   selectedItem = signal<SelectItemInterface | null>(null);
 
@@ -25,11 +24,11 @@ export class FormSelectComponent {
           return this.selectedItem()?.text;
       }
 
-      return this.label;
+      return this.label();
   });
 
   get selectIcon(): string {
-      return this.icon || 'assets/icons/arrow-down.svg';
+      return this.icon() || 'assets/icons/arrow-down.svg';
   }
 
   toggle(): void {

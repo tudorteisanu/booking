@@ -1,4 +1,4 @@
-import {Component, Input, signal} from '@angular/core';
+import {Component, input, signal} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 import {RouterLink} from '@angular/router';
 
@@ -13,7 +13,7 @@ import {RouterLink} from '@angular/router';
     styleUrl: './featured-hotels.component.css'
 })
 export class FeaturedHotelsComponent {
-  @Input() title = '';
+   title = input<string>();
   featuredHotels = signal([
       {
           id: 1,

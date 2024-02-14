@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
 
 @Component({
     selector: 'app-rating',
@@ -9,17 +9,8 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RatingComponent {
-  @Input({required: true}) rating = 0;
-
-  get roundedRating(): number {
-      return Math.floor(this.rating);
-  }
-
-  get filledStars() {
-      return [...new Array(this.roundedRating)];
-  }
-
-  get unfilledStars() {
-      return [...new Array(5-this.roundedRating)];
-  }
+  rating = input(0);
+  roundedRating = computed(() => Math.floor(this.rating()));
+  filledStars = computed(() => [...new Array(this.roundedRating())]);
+  unfilledStars = computed(() => [...new Array(5-this.roundedRating())]);
 }

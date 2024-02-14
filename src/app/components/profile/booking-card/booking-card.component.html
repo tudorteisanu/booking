@@ -1,25 +1,25 @@
 <div class="p-3 bg-white w-full rounded-md flex justify-between mt-4">
     <div class="flex">
         <div>
-            <img [src]="booking.image" alt="">
+            <img [src]="booking().image" alt="">
         </div>
         <ul class="ml-3 flex flex-col justify-between">
             <li class="flex items-center">
                 <img width="16" height="16" ngSrc="assets/icons/building.svg" alt="">
                 <span class="ml-1 text-sm text-dark-green">
-                {{booking.name}}
+                {{booking().name}}
             </span>
             </li>
             <li class="flex items-center mt-2">
                 <img width="16" height="16" ngSrc="assets/icons/location.svg" alt="">
                 <span class="ml-1 text-sm text-dark-green">
-                {{booking.location}}
+                {{booking().location}}
             </span>
             </li>
             <li class="flex items-center mt-2">
                 <img width="16" height="16" ngSrc="assets/icons/calendar.svg" alt="">
                 <span class="ml-1 text-sm text-dark-green">
-                {{booking.date}}
+                {{booking().date}}
             </span>
             </li>
         </ul>
@@ -30,11 +30,11 @@
             <div class="text-sm text-nowrap">
             <span
                     class="uppercase font-bold"
-                    [ngClass]="getStatusClass(booking.status)">
-                {{ booking.status}}
+                    [ngClass]="getStatusClass(booking().status)">
+                {{ booking().status}}
             </span>
                 <span>
-                ID {{booking.id}}
+                ID {{booking().id}}
             </span>
             </div>
             <div>
@@ -49,4 +49,7 @@
     </div>
 </div>
 
-<app-booking-modal [displayed]="isModalDisplayed" [booking]="booking"/>
+<app-booking-modal
+  [(displayed)]="isModalDisplayed"
+  [booking]="booking()"
+/>

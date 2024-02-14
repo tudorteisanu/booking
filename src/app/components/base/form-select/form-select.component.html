@@ -1,6 +1,6 @@
 <div class="rounded-md border border-gray-200 w-full relative" (clickOutside)="hide()">
     <div class="flex items-center p-2 justify-between cursor-pointer" (click)="toggle()">
-        @if(icon) {
+        @if(icon()) {
             <img [src]="selectIcon" alt="">
         }
         <span
@@ -12,7 +12,7 @@
     </div>
         @if(displayed()) {
             <ul class="absolute top-12 left-0 bg-white w-full shadow rounded-md max-h-[300px] overflow-y-auto">
-                @for (item of items; track item.value) {
+                @for (item of items(); track item.value) {
                     <li class="p-2 text-gray-500 cursor-pointer hover:bg-gray-100" (click)="selectItem(item)">
                         {{item.text}}
                     </li>

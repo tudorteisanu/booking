@@ -6,7 +6,7 @@
         <img src="assets/icons/arrow-down.svg" class="rotate-90" alt="">
     </button>
 
-    @for (item of gallery; track $index) {
+    @for (item of gallery(); track $index) {
         @if ($index === activeIndex()) {
             <div class="h-full w-full">
                 <app-hotel-gallery-item [url]="item.url" />
