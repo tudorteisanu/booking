@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { RestaurantInterface } from '../../../types';
+import { FoodTypes, RestaurantInterface } from '../../../types';
 import { RestaurantCardComponent } from '../restaurant-card/restaurant-card.component';
 import { SearchComponent } from '../../base/search/search.component';
 
@@ -16,10 +16,13 @@ export class ProfileSavedRestaurantsComponent {
     [...new Array(8)].map((_, id) => ({
       id,
       name: 'Hotel Name Detail',
-      foodType: 'Northern food',
+      foodType: FoodTypes.NorthernFood,
       location: 'New Delhi',
       menu: 'View menu',
-      image: 'assets/images/hotel.png',
+      image: {
+        id: 1,
+        url: 'assets/images/hotel.png',
+      },
     })),
   );
 }

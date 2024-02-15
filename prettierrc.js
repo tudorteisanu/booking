@@ -5,9 +5,10 @@ const config = {
   semi: true,
   useTabs: false,
   singleQuote: true,
-  bracketSpacing: false,
+  bracketSpacing: true,
   singleAttributePerLine: true,
   embeddedLanguageFormatting: "auto",
+  arrowParens: "avoid"
 };
 
 export default config;

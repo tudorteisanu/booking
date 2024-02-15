@@ -1,10 +1,10 @@
 import { MediaInterface } from './media.interface';
+import { UserInterface } from './user.interface';
 
 export interface ReviewInterface {
   id: number;
-  name: string;
+  author: UserInterface;
   rating: number;
-  image: string;
   text: string;
   gallery: MediaInterface[];
 }

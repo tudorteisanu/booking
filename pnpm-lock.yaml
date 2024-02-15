@@ -29,6 +29,9 @@ dependencies:
   '@angular/router':
     specifier: ^17.1.0
     version: 17.1.0(@angular/common@17.1.0)(@angular/core@17.1.0)(@angular/platform-browser@17.1.0)(rxjs@7.8.0)
+  '@ngrx/operators':
+    specifier: ^17.1.0
+    version: 17.1.0(rxjs@7.8.0)
   '@ngrx/signals':
     specifier: ^17.1.0
     version: 17.1.0(@angular/core@17.1.0)(rxjs@7.8.0)
@@ -2032,6 +2035,15 @@ packages:
     dependencies:
       call-bind: 1.0.6
     dev: true
+
+  /@ngrx/operators@17.1.0(rxjs@7.8.0):
+    resolution: {integrity: sha512-Dc2vPdBcVpDPy1PAappTRQe6fMXR/hUXjQL5olIqI9jA/08Yj2Y3MMmXG4uPXMj9iVACy1B3kmxz424uTpfc1w==}
+    peerDependencies:
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      rxjs: 7.8.0
+      tslib: 2.6.2
+    dev: false
 
   /@ngrx/signals@17.1.0(@angular/core@17.1.0)(rxjs@7.8.0):
     resolution: {integrity: sha512-CF387SNYUoPeFCh13S/vmsyFRZHXm7cZjxuwXbI3AWDS/JXO9GC2061O9f0Fy7DIyQtDisY9uGV5eOiKTYmT0w==}

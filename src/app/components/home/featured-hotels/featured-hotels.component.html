@@ -11,12 +11,12 @@
   </h3>
 
   <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-5">
-    @for (hotel of featuredHotels(); track hotel.id) {
+    @for (hotel of hotels(); track hotel.id) {
       <div
         class="p-3 bg-white shadow rounded-md cursor-pointer hover:scale-105 hover:shadow-2xl"
         [routerLink]="['/hotel', hotel.id]"
       >
-        <img [src]="hotel.image" alt="" />
+        <img [src]="hotel.image?.url || 'assets/images/image_1.png'" alt="" class="w-full max-h-[180px] h-full rounded-md object-cover" />
         <div class="py-2 flex items-center justify-between">
           <span class="text-primary font-bold">
             {{ hotel.name }}
@@ -29,7 +29,9 @@
           {{ hotel.location }}
         </div>
         <div class="text-xs text-gray-500 pt-2">
-          {{ hotel.detail }}
+          <span>{{hotel.price}}</span>
+          <span class="px-1">|</span>
+          <span>{{hotel.foodTypes.join(', ')}}</span>
         </div>
       </div>
     }

@@ -15,7 +15,10 @@ export class ReviewsComponent {
   reviews = signal<HotelReviewInterface[]>([
     {
       id: 1,
-      name: 'Prashant Kumar Singh',
+      author: {
+        id: 1,
+        name: 'Prashant Kumar Singh',
+      },
       comment:
         'If you wanna take a break from Varanasi you find a great location and hospitality in this rooftop in the heart of the town. Food is really tasty and staff really great!',
       review: 4.5,
@@ -37,7 +40,10 @@ export class ReviewsComponent {
     },
     {
       id: 1,
-      name: 'Prashant Kumar Singh',
+      author: {
+        id: 1,
+        name: 'Prashant Kumar Singh',
+      },
       comment:
         'If you wanna take a break from Varanasi you find a great location and hospitality in this rooftop in the heart of the town. Food is really tasty and staff really great!',
       review: 4.5,
@@ -59,7 +65,10 @@ export class ReviewsComponent {
     },
     {
       id: 1,
-      name: 'Prashant Kumar Singh',
+      author: {
+        id: 1,
+        name: 'Prashant Kumar Singh',
+      },
       comment:
         'If you wanna take a break from Varanasi you find a great location and hospitality in this rooftop in the heart of the town. Food is really tasty and staff really great!',
       review: 4.5,
@@ -81,7 +90,10 @@ export class ReviewsComponent {
     },
     {
       id: 1,
-      name: 'Prashant Kumar Singh',
+      author: {
+        id: 1,
+        name: 'Prashant Kumar Singh',
+      },
       comment:
         'If you wanna take a break from Varanasi you find a great location and hospitality in this rooftop in the heart of the town. Food is really tasty and staff really great!',
       review: 4.5,

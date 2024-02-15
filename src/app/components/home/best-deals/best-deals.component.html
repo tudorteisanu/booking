@@ -11,9 +11,9 @@
   </h3>
 
   <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-5">
-    @for (item of items(); track item) {
+    @for (item of items(); track item.id) {
       <div>
-        <img [src]="item" alt="" />
+        <img [src]="item.url" alt="" />
       </div>
     }
   </div>

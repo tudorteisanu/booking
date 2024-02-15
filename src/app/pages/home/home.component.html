@@ -1,7 +1,11 @@
 <section>
   <app-hero />
-  <app-featured-hotels title="Featured Hotels near you" />
+  @if (store.featuredHotels().length) {
+    <app-featured-hotels [hotels]="store.featuredHotels()" title="Featured Hotels near you" />
+  }
   <app-popular-cuisines />
-  <app-featured-hotels title="Hotels near you" />
+  @if (store.popularHotels()) {
+    <app-featured-hotels [hotels]="store.featuredHotels()" title="Hotels near you" />
+  }
   <app-best-deals />
 </section>

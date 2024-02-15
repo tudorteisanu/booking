@@ -5,6 +5,8 @@ import {
 } from '@angular/router';
 
 import { routes } from './app.routes';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { baseUrlInterceptor } from './interceptor/base-url.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,5 +16,6 @@ export const appConfig: ApplicationConfig = {
       },
       )
     ),
+    provideHttpClient(withInterceptors([baseUrlInterceptor]))
   ]
 };

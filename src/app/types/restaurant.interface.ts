@@ -1,8 +1,11 @@
+import { FoodTypes } from "./foodTypes.enum";
+import { MediaInterface } from "./media.interface";
+
 export interface RestaurantInterface {
   id: number;
   name: string;
-  foodType: string;
+  foodType: FoodTypes;
   location: string;
   menu: string;
-  image: string;
+  image: MediaInterface;
 }

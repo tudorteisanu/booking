@@ -3,4 +3,4 @@ export interface SelectItemInterface {
   text: string;
 }
 
-export type SelectItemsInterface = SelectItemInterface[]
+export type SelectItemsInterface = SelectItemInterface[];

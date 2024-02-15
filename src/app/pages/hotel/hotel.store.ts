@@ -1,5 +1,5 @@
 import { signalStore, withState } from '@ngrx/signals';
-import { HotelInterface } from '@/types';
+import { FoodTypes, HotelInterface } from '@/types';
 
 type BooksState = {
   hotel: HotelInterface;
@@ -8,6 +8,11 @@ type BooksState = {
 
 const initialState: BooksState = {
   hotel: {
+    id: 1,
+    image: {
+      id: 1,
+      url: '',
+    },
     name: 'Hotel Ultra Max',
     location: 'Connaught Place, Central Delhi',
     distance: {
@@ -15,7 +20,7 @@ const initialState: BooksState = {
       count: 0.7,
       place: 'Banaras Ghats',
     },
-    open: {
+    workTime: {
       from: '10:00 AM',
       to: '11:00 PM',
     },
@@ -43,7 +48,8 @@ const initialState: BooksState = {
         url: 'assets/images/gallery_5.jpeg',
       },
     ],
-    price: '₹ 2,000 for 2 | North Indian',
+    price: '₹ 2,000 for 2',
+    foodTypes: [FoodTypes.NorthIndian]
   },
   isLoading: false,
 };

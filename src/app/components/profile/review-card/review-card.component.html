@@ -1,9 +1,9 @@
 <div class="bg-white rounded-md p-4">
   <div class="flex w-full justify-between">
     <div class="flex items-center gap-4">
-      <div><img [src]="review().image" alt="" /></div>
+      <div><img [src]="review().author.avatar?.url" alt="" /></div>
       <div>
-        <span>{{ review().name }}</span>
+        <span>{{ review().author.name }}</span>
         <app-rating [rating]="review().rating" />
       </div>
     </div>

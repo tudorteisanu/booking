@@ -8,3 +8,4 @@ export * from './food.interface';
 export * from './basket.interface';
 export * from './hotelReview.interface';
 export * from './offer.interface';
+export { FoodTypes } from './foodTypes.enum'
