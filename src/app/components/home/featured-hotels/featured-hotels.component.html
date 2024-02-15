@@ -16,7 +16,7 @@
         class="p-3 bg-white shadow rounded-md cursor-pointer hover:scale-105 hover:shadow-2xl"
         [routerLink]="['/hotel', hotel.id]"
       >
-        <img [src]="hotel.image?.url || 'assets/images/image_1.png'" alt="" class="w-full max-h-[180px] h-full rounded-md object-cover" />
+        <img [src]="hotel.image && hotel.image.url || 'assets/images/image_1.png'" alt="" class="w-full max-h-[180px] h-full rounded-md object-cover" />
         <div class="py-2 flex items-center justify-between">
           <span class="text-primary font-bold">
             {{ hotel.name }}
